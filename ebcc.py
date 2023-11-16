@@ -24,9 +24,9 @@ def open_and_login():
 
     # Führt den Login-Prozess durch
     pyautogui.click(x=1000, y=330)  # Klickt auf das Benutzernamen-Feld
-    pyautogui.write('BSPL194')  # Gibt den Benutzernamen ein
+    pyautogui.write('XXXXXXXX')  # Gibt den Benutzernamen ein
     pyautogui.click(x=1000, y=390)  # Klickt auf das Passwort-Feld
-    pyautogui.write('a28jvaydhe')  # Gibt das Passwort ein
+    pyautogui.write('XXXXXXXX')  # Gibt das Passwort ein
     pyautogui.click(x=1150, y=450)  # Klickt auf den Login-Button
 
 # Schließt den cc-launcher, falls er geöffnet ist, und startet ihn neu
