@@ -16,13 +16,26 @@ config = load_config()
 
 def close_cc_launcher():
     window_title = "CC Launcher 3.0"
+    confirmation_window_title = "Bestätigung"  # Titel des Bestätigungsfensters
     windows = gw.getWindowsWithTitle(window_title)
+
     if windows:
         for window in windows:
             if not window.isActive:
                 window.activate()
             window.close()
-        time.sleep(2)
+            time.sleep(2)  # Wartet, damit das Fenster sicher geschlossen wird
+
+            # Überprüfen, ob das Bestätigungsfenster erscheint
+            confirmation_windows = gw.getWindowsWithTitle(confirmation_window_title)
+            if confirmation_windows:
+                confirmation_window = confirmation_windows[0]
+                confirmation_window.activate()
+                time.sleep(2)  # Warten, bis das Fenster aktiv ist
+
+                # Klicken Sie auf die Bestätigungsschaltfläche
+                # Ersetzen Sie diese Koordinaten mit den tatsächlichen Koordinaten der Schaltfläche in Ihrem Bestätigungsfenster
+                pyautogui.click(x=1000, y=500)
 
 def open_and_login(username, password):
     subprocess.Popen(cc_launcher_path)
